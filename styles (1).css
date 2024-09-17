@@ -1,0 +1,44 @@
+body {
+  background: #000; /* Black background */
+  color: #FFFA;
+  margin: 0;
+  width: 100vw;
+  overflow: hidden; /* Ensure falling stars don't scroll */
+  position: relative;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Make sure it doesn't interfere with other elements */
+  z-index: 1; /* Place stars above other content */
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Additional stars styling */
+.star:nth-child(odd) {
+  animation-duration: 1.5s;
+  opacity: 0.7;
+}
+
+.star:nth-child(even) {
+  animation-duration: 2s;
+  opacity: 0.5;
+}
